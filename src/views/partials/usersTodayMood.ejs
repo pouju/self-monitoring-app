@@ -1,0 +1,26 @@
+
+<div class="row p-4 justify-content-center">
+    <div class="card m-1 col-auto" style="width: 18rem;">
+        <img class="card-img-top" src="<%= todayImage %>" alt="Just a weird emoji">
+        <div class="card-body">
+            <h5 class="card-title">Average mood today</h5>
+            <p class="card-text"><%= todayMood %></p>
+        </div>
+        <a href="/behavior/reporting" class="btn btn-primary mb-2">Continue reporting</a>
+    </div>
+    <div class="card m-1 col-auto" style="width: 18rem;">
+        <img class="card-img-top" src="<%= yesterdayImage %>" alt="Just a weird emoji">
+        <div class="card-body">
+            <h5 class="card-title">Average mood yesterday</h5>
+            <p class="card-text"><%= yesterdayMood %></p>
+        </div>
+        <a href="/behavior/summary" class="btn btn-primary mb-2">See summaries</a>
+    </div>
+    <div class="card m-1 col-auto" style="width: 18rem;">
+        <img class="card-img-top" src="<%= avgImage %>" alt="Just a weird emoji">
+        <div class="card-body">
+            <h5 class="card-title">Conclusion</h5>
+            <p class="card-text"><%= conclusion %></p>
+        </div>
+    </div>
+</div>

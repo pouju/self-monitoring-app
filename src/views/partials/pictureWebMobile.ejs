@@ -1,0 +1,15 @@
+<picture>
+    <source
+            media="(min-width: 650px)"
+            srcset="<%= web %>"
+            class="d-block w-100"
+            alt="slide image web">
+    <source
+            media="(min-width: 360px)"
+            srcset="<%= mobile %>"
+            class="d-block w-100"
+            alt="slide image mobile">
+    <img src="<%= web %>>"
+         class="d-block w-100"
+         alt="slide image">
+</picture>

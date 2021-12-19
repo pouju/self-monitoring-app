@@ -1,0 +1,58 @@
+
+<div id="topnavbar" class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src="https://drive.google.com/uc?id=1ctm_79J3ynfu6fzBxYFd7ANP57jPVVFa" width="40" height="40" class="d-inline-block align-top" alt="just a weird logo" loading="lazy"></a> <!--src="/static/pub/favicon.ico"-->
+            <a class="navbar-text d-none d-sm-inline" href="/">Self Monitoring App</a>
+        </span>
+        <div class="d-lg-none">
+            <%- include('./loggedOrNot.ejs') %>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <% if (sessionUser) { %>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navBarDropdown" role="button" data-toggle="dropdown">
+                            Reporting
+                        </a>
+                        <div class="dropdown-menu bg-dark border-0">
+                            <a class="dropdown-item text-white-50 bg-transparent" href="/behavior/reporting">Day status</a>
+                            <a class="dropdown-item text-white-50 bg-transparent" href="/behavior/reporting/morning">Report morning</a>
+                            <a class="dropdown-item text-white-50 bg-transparent" href="/behavior/reporting/evening">Report evening</a>
+                        </div>
+                    </div>
+                    <!--<a class="nav-link" href="/behavior/reporting">Reporting</a>-->
+                    <a class="nav-link" href="/behavior/summary">Summary</a>
+                    <a class="nav-link" href="/behavior/search">Search reports</a>
+                <% } else { %>
+                    <a class="nav-link" href="/auth/login">Login</a>
+                    <a class="nav-link" href="/auth/registration">Register</a>
+                <% } %>
+            </div>
+        </div>
+        <div class="d-none d-lg-inline">
+            <%- include('./loggedOrNot.ejs') %>
+        </div>
+    </nav>
+
+    <!-- is used to add active highlight to selected link -->
+
+    <script>
+        const path = window.location.pathname;
+        let elem;
+        if (path.startsWith('/behavior/reporting')) {
+            elem = document.getElementById('navBarDropdown')
+        }
+        else {
+            elem = document.querySelector(`.nav-link[href='${path}']`);
+        }
+        if (elem) {
+            elem.classList.add('active');
+        }
+    </script>
+
+</div>

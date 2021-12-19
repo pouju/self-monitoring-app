@@ -1,0 +1,102 @@
+<div class="container"> <!-- use class container so carousel don't take whole page -->
+    <div id="landingInfoCarousel" class="carousel slide carousel-fade m-4" data-ride="carousel" >
+        <ol class="carousel-indicators">
+            <li data-target="#landingInfoCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#landingInfoCarousel" data-slide-to="1"></li>
+            <li data-target="#landingInfoCarousel" data-slide-to="2"></li>
+            <li data-target="#landingInfoCarousel" data-slide-to="3"></li>
+            <li data-target="#landingInfoCarousel" data-slide-to="4"></li>
+            <li data-target="#landingInfoCarousel" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1-6zTCHuDopNIomF0REx4ZYJV3eyVcOcr', mobile: 'https://drive.google.com/uc?id=12IMWSD-6Li7ha5UXmniGALgJwkUBQkuM' }) %>
+                <div class="carousel-caption d-none d-sm-block" style="background-color: #343a40; border-radius: 50px">
+                    <h5>Self Monitoring App</h5>
+                    <p>
+                        Welcome to use totally new application for self-monitoring your daily basis.
+                        You can do reports every morning and evening.
+                    </p>
+                </div>
+                <div class="carousel-caption d-block d-sm-none" style="background-color: #343a40; border-radius: 25px">
+                    <h5>Self Monitoring App</h5>
+                    <p>
+                        Totally new app for self-monitoring.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1V5QfbWXtSQlzy2VskjMNJID-4wBkxS3p', mobile: 'https://drive.google.com/uc?id=1WmHnHUSU-l0Qgt6cKxv7WaqqKAKqKEK5' }) %>
+                <div class="carousel-caption d-none d-sm-block">
+                    <h5>In morning reports you can report your</h5>
+                    <p>Sleep duration - Sleep quality - Morning mood</p>
+                </div>
+                <div class="carousel-caption d-block d-sm-none">
+                    <h5>Morning reports</h5>
+                    <p>Sleep duration - Sleep quality - Morning mood</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1dSUkH8T6ywgmKGSFg2cR0LImB9rUozWn', mobile: 'https://drive.google.com/uc?id=1zWUmXde9KOceXGQIaSjlsHkA3HHHlRMK' }) %>
+                <div class="carousel-caption d-none d-sm-block">
+                    <h5>In evening reports you can report your</h5>
+                    <p>Sport and exercise duration - Studying duration - Eating regularity and quality - Evening mood </p>
+                </div>
+                <div class="carousel-caption d-block d-sm-none">
+                    <h5>Evening reports</h5>
+                    <p>Sports duration - Studying duration - Eating quality - Evening mood </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1V5QfbWXtSQlzy2VskjMNJID-4wBkxS3p', mobile: 'https://drive.google.com/uc?id=1dwkX8SvM9wvOH8UT85A3RyxdhKxOKDwf' }) %>
+                <div class="carousel-caption d-none d-sm-block">
+                    <h5>Week and month summaries!</h5>
+                    <p>
+                        In summary page you can see week and
+                        month summaries by default your last week and last month but you can
+                        select also specific week or month yourselves.
+                        Check also a specific day with search.
+                    </p>
+                </div>
+                <div class="carousel-caption d-block d-sm-none">
+                    <h5>Summaries!</h5>
+                    <p>Month and week summaries in summary page.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1z0KyQ06sMt7GiWSAPZPOaacLVvm7JWKd', mobile: 'https://drive.google.com/uc?id=1GAWc-i557HHD0LoQKynndFRnBcPFEuOC' }) %>
+                <div class="carousel-caption d-none d-sm-block">
+                    <h5>Forgot to report one day? No worries!</h5>
+                    <p>
+                        You can select specific day which you would like to report.
+                        Would like to change your previous report?
+                        That's easy, just make a new report and it overwrites the old one.
+                    </p>
+                </div>
+                <div class="carousel-caption d-block d-sm-none">
+                    <h5>Forgot to report?</h5>
+                    <p>
+                        Select day- option allow you to report day you wish.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <%- include('./pictureWebMobile.ejs', { web: 'https://drive.google.com/uc?id=1Ey5h5A1qIRaexkeLTEsFNdWGHbfQ3IlT', mobile: 'https://drive.google.com/uc?id=11iReyQDmVbIhmjZCgxgRrdE-znuwspxW' }) %>
+                <div class="carousel-caption d-block">
+                    <h5>Let's start reporting!</h5>
+                    <p><a href="/auth/registration">Register now!</a> - <a href="/auth/login">Login!</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#landingInfoCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#landingInfoCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

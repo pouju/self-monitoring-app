@@ -1,0 +1,23 @@
+
+<script>
+    let time = 10000;
+
+    setTimeout(function(){
+        window.location.href = '/auth/login';
+    }, time);
+</script>
+
+<div>
+    <p>You are moving to login page in a moment or use this link to move to <a href="/auth/login">login</a> page if automatic redirection fails.</p>
+    <p id="counter">Redirecting after 10 seconds</p>
+</div>
+
+<script>
+    let sec = 10;
+
+    let element = document.getElementById('counter');
+    setInterval(function() {
+        sec--;
+        element.innerText = `Redirecting after ${sec} seconds`;
+    }, 1000);
+</script>

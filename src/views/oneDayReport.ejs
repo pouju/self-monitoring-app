@@ -1,0 +1,48 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="row justify-content-center">
+    <div class="card m-2 p-2 col-auto">
+        <h3 class="card-header">Reports for date <%= day %></h3>
+        <div class="card-body">
+            <form method="POST" >
+                <label for="daySelector">Select day</label>
+                <%- include('./partials/error.ejs', { errors: errors, attribute: 'day'}) %>
+                <input type="date" name="selectedDay" id="daySelector" value="<%= day %>" onchange="this.form.submit()" />
+            </form>
+            <% if (dayReportsData.avgmood) { %>
+                <p>Your average mood for that day was <%= dayReportsData.avgmood %></p>
+            <% } else { %>
+                <p>Impossible to say anything about your mood for that day!</p>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="card m-2 p-2 col-auto">
+        <h5 class="card-header"><%= dayReportsData.morning.message %></h5>
+        <% if (dayReportsData.morning.reported) { %>
+            <div class="card-body">
+                <ul>
+                    <li>Morning mood was <%= dayReportsData.morning.mood %></li>
+                    <li>You slept <%= dayReportsData.morning.sleep_duration %> hours</li>
+                    <li>Your sleep quality was <%= dayReportsData.morning.sleep_quality %></li>
+                </ul>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="card m-2 p-2 col-auto">
+        <h5 class="card-header"><%= dayReportsData.evening.message %></h5>
+        <% if (dayReportsData.evening.reported) { %>
+            <div class="card-body">
+                <ul>
+                    <li>Evening mood was <%= dayReportsData.evening.mood %></li>
+                    <li>You did sports <%= dayReportsData.evening.sports_duration %> hours</li>
+                    <li>You studied <%= dayReportsData.evening.studying_duration %> hours</li>
+                    <li>Your eating quality anf regularity was <%= dayReportsData.evening.eating_reg_qual %></li>
+                </ul>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

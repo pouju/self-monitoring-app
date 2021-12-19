@@ -1,0 +1,18 @@
+<% if (!sessionUser) { %>
+<div class="row p-4 justify-content-center">
+    <div class="card m-1 col-auto" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title">Have already account?</h5>
+            <p class="card-text">Move to login page and continue reporting</p>
+        </div>
+        <a href="/auth/login" class="btn btn-primary stretched-link align-bottom mb-2">Login</a>
+    </div>
+    <div class="card m-1 col-auto" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title">New user?</h5>
+            <p class="card-text">Registration takes only a second!</p>
+        </div>
+        <a href="/auth/registration" class="btn btn-primary stretched-link align-bottom mb-2">Register now</a>
+    </div>
+</div>
+<% }%>

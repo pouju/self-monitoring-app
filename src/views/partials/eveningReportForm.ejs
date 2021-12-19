@@ -1,0 +1,50 @@
+
+<div class="card m-2 p-2">
+    <h3 class="card-header col-auto">Evening Report</h3>
+    <div class="card-body">
+        <form method="POST">
+            <fieldset>
+                <div class="form-group row">
+
+                    <%- include('error.ejs', { errors: errors, attribute: 'date'}) %>
+                    <label class="col-sm-2 col-form-label" for="eveningDateField">Date</label>
+                    <input class="form-control col-sm-2" type="date" name="date" id="eveningDateField" value="<%= date %>" />
+
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'sports_duration'}) %>
+                    <label class="col-sm-2 col-form-label" for="eveningSportsDurationField">Sport and exercise duration</label>
+                    <input class="form-control col-sm-2" type="number" name="sports_duration" id="eveningSportsDurationField" min="0" value="<%= sports_duration %>" placeholder="Hours"/>
+
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'studying_duration'}) %>
+                    <label class="col-sm-2 col-form-label" for="eveningStudyingDurationField">Studying duration</label>
+                    <input class="form-control col-sm-2" type="number" name="studying_duration" id="eveningStudyingDurationField" min="0" value="<%= studying_duration %>" placeholder="Hours" />
+
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'eating_regularity_quality'}) %>
+                    <label class="col-sm-2 col-form-label" for="eveningEatingRegularityQualityField">Eating regularity and quality</label>
+                    <input class="form-control col-sm-2" type="range" name="eating_regularity_quality" min="1" max="5" id="eveningEatingRegularityQualityField" value="<%= eating_regularity_quality %>" aria-describedby="eatHelpBlock" />
+                    <small id="eatHelpBlock" class="form-text text-muted col-sm-2">
+                        Slider value is between 1-5.
+                    </small>
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'generic_mood'}) %>
+                    <label class="col-sm-2 col-form-label" for="eveningGenericMoodField">Generic mood</label>
+                    <input class="form-control col-sm-2" type="range" name="evening_mood" min="1" max="5" id="eveningGenericMoodField" value="<%= generic_mood %>" aria-describedby="moodHelpBlock" />
+                    <small id="moodHelpBlock" class="form-text text-muted col-sm-2">
+                        Mood is between 1-5.
+                    </small>
+                </div>
+                <input class="btn btn-primary col-sm-1 mt-3" type="submit" value="Report!" />
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="card m-2">
+    <h3 class="card-header">Registration done</h3>
+    <div class="card-body">
+        <p class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+            <%= data %>
+        </p>
+        <%- include('./partials/redirectToLogin.ejs') %>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

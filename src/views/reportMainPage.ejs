@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- shows succeed message when report is done successfully -->
+<% if (succeed) { %>
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert" id="succeedAlert">
+        Reporting succeeded!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <script src="/static/pub/removealert.js"></script>
+<% } %>
+
+
+<!-- Shows user's status for current day or tells that nothing is reported -->
+<div class="card p-2 mt-2">
+    <h3 class="card-header">Status</h3>
+    <div class="card-body">
+        <p>
+            <%=reportStatus.morningReported.message%>
+            <% if (reportStatus.morningReported.reported) { %>
+                <ul>
+                    <li><%=reportStatus.morningReported.mood%></li>
+                    <li><%=reportStatus.morningReported.sleep_duration%></li>
+                    <li><%=reportStatus.morningReported.sleep_quality%></li>
+                </ul>
+            <% } %>
+        </p>
+        <p>
+            <%=reportStatus.eveningReported.message%>
+            <% if (reportStatus.eveningReported.reported) { %>
+                <ul>
+                    <li><%=reportStatus.eveningReported.mood%></li>
+                    <li><%=reportStatus.eveningReported.sports_duration%></li>
+                    <li><%=reportStatus.eveningReported.studying_duration%></li>
+                    <li><%=reportStatus.eveningReported.eating_reg_qual%></li>
+                </ul>
+            <% } %>
+        </p>
+    </div>
+    <!-- Gives user a tip to use selectors to navigate morning or evening report page-->
+    <p class="alert alert-info mt-1" role="alert">
+        Select first from top panel would you like to report morning or evening!
+    </p>
+</div>
+
+<%- include('./partials/footer.ejs') %>

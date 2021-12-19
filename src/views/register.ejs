@@ -1,0 +1,37 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="card m-2 p-2">
+    <h1 class="card-header col-auto">Registration!</h1>
+    <div class="card-body">
+        <form method="POST">
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="email">User email</label>
+                    <input class="form-control col-sm-2" type="email" name="email" id="email" value="<%= popEmail %>" placeholder="email@example.com" />
+                    <%- include('./partials/error.ejs', { errors: errors, attribute: 'email'}) %>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="password1">Password</label>
+                    <input class="form-control col-sm-2" type="password" name="password" id="password1" placeholder="At least 4 characters!"/>
+                    <%- include('./partials/error.ejs', { errors: errors, attribute: 'error'}) %>
+                    <%- include('./partials/error.ejs', { errors: errors, attribute: 'password'}) %>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="verification">Type password again</label>
+                    <input class="form-control col-sm-2" type="password" name="verification" if="verification" placeholder="Passwords must match!"/>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <input class="btn btn-primary col-sm-2" type="submit" value="Register" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <p class="card-footer">
+        Do you already have an account? Login <a href="/auth/login">here</a>.
+    </p>
+</div>
+<%- include('./partials/footer.ejs') %>

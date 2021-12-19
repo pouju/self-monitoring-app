@@ -1,0 +1,63 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="card m-2">
+    <h3 class="card-header">About application</h3>
+    <div class="card-body">
+        <p>
+            The purpose of the Self Monitoring Application is to provide users possibility to report and follow their
+            daily basis. User can submit morning and evening reports every day.
+        </p>
+
+        <p>
+            <h5>In morning reports you can report</h5>
+            <ul>
+                <li>Sleep duration (in hours)</li>
+                <li>Sleep quality (in range 1-5)</li>
+                <li>Morning mood (in range 1-5)</li>
+            </ul>
+        </p>
+
+        <p>
+            <h5>And in evening reports you can report</h5>
+            <ul>
+                <li>Sport and exercise duration (in hours)</li>
+                <li>Studying duration (in hours)</li>
+                <li>Eating regularity and quality (in range 1-5)</li>
+                <li>Evening mood (in range 1-5)</li>
+            </ul>
+        </p>
+
+        <br>
+            <h5>Ash! I missed one day</h5>
+            Forgot to report one day? No worries!
+            You can select specific day which you would like to report.
+            Would like to change your previous report?
+            That's easy, just make a new report and it overwrites the old one.
+        </p>
+
+        <p>
+            <h5>Summaries</h5>
+            Summary page provides you a week and month summaries.
+            Default you see last full week and last full month summaries
+            but you can select also a specific week and month. There is also possibility
+            to check your reports for specific day.
+        </p>
+
+        <p>
+            <h5>Registration</h5>
+            Registration is free. Just navigate to registration page
+            and fill your email and password to get started.
+        </p>
+
+        <p>
+            <h5>For developers</h5>
+            There is also a few API endpoints available.
+        </p>
+
+    </div>
+    <p class="card-footer text-center">
+        Let's start reporting!
+    </p>
+</div>
+
+<%- include('./partials/footer.ejs') %>

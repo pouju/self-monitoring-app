@@ -1,0 +1,40 @@
+<div class="card m-2 p-2 ">
+    <h3 class="card-header col-auto">Morning Report</h3>
+    <div class="card-body">
+        <form method="POST" class="col-auto">
+            <fieldset>
+                <div class="form-group row">
+
+                    <%- include('error.ejs', { errors: errors, attribute: 'date'}) %>
+                    <label class="col-sm-2 col-form-label" for="morningDateField">Date</label>
+                    <input class="form-control col-sm-2" type="date" name="date" id="morningDateField" value="<%= date %>" />
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'sleep_duration'}) %>
+                    <label class="col-sm-2 col-form-label" for="morningSleepDurationField">Sleep duration</label>
+                    <input class="form-control col-sm-2" type="number" name="sleep_duration" id="morningSleepDurationField" min="0" step="0.1" value="<%= sleep_duration %>" placeholder="Hours" />
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'sleep_quality'}) %>
+                    <label class="col-sm-2 col-form-label" for="morningSleepQualityField">Sleep quality</label>
+                    <input class="form-control col-sm-2" type="range" name="sleep_quality" min="1" max="5" id="morningSleepQualityField" value="<%= sleep_quality %>" aria-describedby="sleepHelpBlock" />
+                    <small id="sleepHelpBlock" class="form-text text-muted col-sm-2">
+                        Quality is between 1-5
+                    </small>
+                </div>
+
+                <div class="form-group row">
+                    <%- include('error.ejs', { errors: errors, attribute: 'generic_mood'}) %>
+                    <label class="col-sm-2 col-form-label" for="morningGenericMoodField">Generic mood</label>
+                    <input class="form-control col-sm-2" type="range" name="morning_mood" min="1" max="5" id="morningGenericMoodField" value="<%= generic_mood %>" aria-describedby="moodHelpBlock" />
+                    <small id="moodHelpBlock" class="form-text text-muted col-sm-2">
+                        Mood is between 1-5.
+                    </small>
+                </div>
+                <input class="btn btn-primary col-sm-1 mt-3" type="submit" value="Report!" />
+            </fieldset>
+        </form>
+    </div>
+</div>

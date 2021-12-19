@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    image: self-monitoring-app
+    restart: unless-stopped
+    ports:
+      - 7777:7777
+    depends_on:
+      - db
+  db:
+    container_name: self-monitoring-app-postgres-database
+    image: postgres:13.4
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql

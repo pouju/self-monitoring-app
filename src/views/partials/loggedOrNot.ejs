@@ -1,0 +1,14 @@
+<div class="navbar-nav">
+    <% if (sessionEmail) { %>
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="logoutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false">
+            Logged in as <%= sessionEmail %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="logoutDropdown">
+            <a class="dropdown-item" href="/auth/logout">Log out</a>
+        </div>
+    </div>
+    <% } else { %>
+        <span class="navbar-text">Not logged in.</span>
+    <% }%>
+</div>

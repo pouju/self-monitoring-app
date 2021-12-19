@@ -1,0 +1,61 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="row m-2">
+    <div class="card m-1 p-2">
+        <h4 class="card-header col-auto">Summaries</h4>
+        <div class="card-text mt-2">
+            <form method="POST" >
+                <fieldset class="col-auto">
+                    <div class="form-group col-auto">
+                        <label class="col-form-label" for="weekSelector">Select week</label>
+                        <%- include('./partials/error.ejs', { errors: errors, attribute: 'week'}) %>
+                        <input class="form-control" type="week" name="selectedWeek" id="weekSelector" value="<%= week %>" onchange="this.form.submit()" />
+                    </div>
+                    <div class="form-group col-auto">
+                        <label class="col-form-label" for="monthSelector">Select month</label>
+                        <%- include('./partials/error.ejs', { errors: errors, attribute: 'month'}) %>
+                        <input class="form-control" type="month" name="selectedMonth" id="monthSelector" value="<%= month %>" onchange="this.form.submit()" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="card m-1 p-2">
+        <h4 class="card-header">Week summary for week <%= week %></h4>
+        <div class="card-text mt-2">
+            <% if (weekSum.hasOwnProperty('noData')) { %>
+                <p><%= weekSum.noData %></p>
+            <% } else { %>
+            <ul>
+                <li>Average sleep duration: <%= weekSum.averageSleepDuration %></li>
+                <li>Average sleep quality: <%= weekSum.averageSleepQuality%></li>
+                <li>Average time spent on sports and exercise: <%= weekSum.averageSportDuration %></li>
+                <li>Average time spent studying: <%= weekSum.averageStudyingTime %></li>
+                <li>Average regularity and quality of eating: <%= weekSum.averageEating %> </li>
+                <lI>Average generic mood: <%= weekSum.averageGenericMood %> </lI>
+            </ul>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="card m-1 p-2">
+        <h4 class="card-header">Month Summary for month <%= month %></h4>
+        <div class="card-text mt-2">
+            <% if (monthSum.hasOwnProperty('noData')) { %>
+                <p><%= monthSum.noData %></p>
+            <% } else { %>
+                <ul>
+                    <li>Average sleep duration: <%= monthSum.averageSleepDuration %></li>
+                    <li>Average sleep quality: <%= monthSum.averageSleepQuality%></li>
+                    <li>Average time spent on sports and exercise: <%= monthSum.averageSportDuration %></li>
+                    <li>Average time spent studying: <%= monthSum.averageStudyingTime %></li>
+                    <li>Average regularity and quality of eating: <%= monthSum.averageEating %> </li>
+                    <lI>Average generic mood: <%= monthSum.averageGenericMood %> </lI>
+                </ul>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
